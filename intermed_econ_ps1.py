@@ -123,7 +123,7 @@ class ARMA:
 
 
 # let's see how it works
-arma1 = ARMA(phi_coeffs=[-0.58, 0.6])#, theta_coeffs=[0.1, 0.2, 0.1, 0.3])
+arma1 = ARMA(phi_coeffs=[-0.58, 0.6, 0.1])#, theta_coeffs=[0.1, 0.2, 0.1, 0.3])
 print('We have just created the ARMA model: ', arma1.display())
 print('\n---------- AR properties ---------------')
 print('The root(s) of the AR characteristic polynomial: ', arma1.ar_roots())
