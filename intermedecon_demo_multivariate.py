@@ -6,7 +6,6 @@ import numpy as np
 import statsmodels.api as sm
 import statsmodels.tsa as tsa
 import statsmodels.tsa.api as tsa_api
-import matplotlib.pyplot as plt
 import intermedecon as icon
 
 
@@ -24,6 +23,7 @@ phiL1_x = np.array([0, 0.02, 0.31])
 phiL2_x = np.array([0, 0.01, 0.001])  # z Granger causes x; y does not Granger cause x
 phiL1_y = np.array([0.23, 0.15, 0])
 phiL2_y = np.array([0.08, 0.20, 0])  # x Granger causes y; z does not Granger cause y
+np.random.seed(2017)
 eps_y, eps_x, eps_z = np.random.randn(nobs + 2), np.random.randn(nobs + 2), np.random.randn(nobs + 2)  # i.i.d. shocks
 for t in range(2, nobs + 2):
     y[t] = phiL1_y.dot([y[t - 1], x[t - 1], z[t - 1]]) + phiL2_y.dot([y[t - 2], x[t - 2], z[t - 2]]) + eps_y[t]
